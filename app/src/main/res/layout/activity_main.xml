@@ -15,7 +15,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/welcomescreenbg" />
+        app:srcCompat="@drawable/welcomescreenbg"
+        android:contentDescription="@string/backgroundImage" />
 
     <ImageView
         android:id="@+id/imageView2pagetwo"
@@ -30,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2ndpge"
-        app:srcCompat="@drawable/swooshlogo" />
+        app:srcCompat="@drawable/swooshlogo"
+        android:contentDescription="@string/swooshLogo" />
 
     <TextView
         android:id="@+id/textView"
@@ -42,7 +44,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:gravity="center_horizontal"
-        android:text="GO ALL IN"
+        android:text="@string/goAll_n"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="40sp"
@@ -62,7 +64,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="On going all out"
+        android:text="@string/onGoingAllOut"
         android:textColor="@color/colorAccent"
         android:textSize="28sp"
         app:fontFamily="@font/headland_one"
@@ -80,7 +82,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:gravity="center_horizontal"
-        android:text="Find a team in your city and dominate the league!"
+        android:text="@string/findATeamInYourCityAndDominateTheLeague"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="22sp"
@@ -90,7 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/getStartedBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -99,7 +101,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/swoosh_button"
-        android:text="Get started!"
+        android:text="@string/getStarted"
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
         app:fontFamily="@font/headland_one"
