@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4">
 
         <ToggleButton
-            android:id="@+id/toggleButton"
+            android:id="@+id/menToggleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/swooshtoggle"
@@ -76,7 +76,7 @@
             app:fontFamily="@font/headland_one" />
 
         <ToggleButton
-            android:id="@+id/toggleButton7"
+            android:id="@+id/womenToggleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -88,7 +88,7 @@
             app:fontFamily="@font/headland_one" />
 
         <ToggleButton
-            android:id="@+id/toggleButton8"
+            android:id="@+id/coEdToggleButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -111,7 +111,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/swoosh_button"
-        android:onClick="leagueNextClicked"
         android:text="@string/next"
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
