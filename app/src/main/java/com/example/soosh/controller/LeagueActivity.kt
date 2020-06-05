@@ -22,7 +22,7 @@ class LeagueActivity : BaseActivity() {
                 startActivity(skills)
             }
             else {
-                val popup = Toast.makeText(this, "Please select a league.", Toast.LENGTH_SHORT)
+                val popup = Toast.makeText(this, "Please select a league to continue.", Toast.LENGTH_LONG)
                 popup.show()
             }
         }
