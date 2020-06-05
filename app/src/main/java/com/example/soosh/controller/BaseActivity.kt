@@ -1,4 +1,4 @@
-package com.example.soosh
+package com.example.soosh.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

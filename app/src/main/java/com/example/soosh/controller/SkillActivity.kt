@@ -1,7 +1,8 @@
-package com.example.soosh
+package com.example.soosh.controller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.soosh.utlities.EXTRA_LEAGUE
+import com.example.soosh.R
 
 class SkillActivity : BaseActivity() {
 
