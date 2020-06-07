@@ -3,22 +3,23 @@ package com.example.soosh.controller
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import com.example.soosh.utlities.EXTRA_LEAGUE
+import com.example.soosh.Model.Player
 import com.example.soosh.R
+import com.example.soosh.utlities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
-    var selectedLeague = ""
+    var player = Player("", "")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
 
         nextBtn.setOnClickListener {
-            if (selectedLeague != "") {
+            if (player.selectedLeague != "") {
                 val skills = Intent(this, SkillActivity::class.java)
-                skills.putExtra(EXTRA_LEAGUE, selectedLeague)
+                skills.putExtra(EXTRA_PLAYER, player)
                 startActivity(skills)
             }
             else {
@@ -30,19 +31,19 @@ class LeagueActivity : BaseActivity() {
         menToggleButton.setOnClickListener {
             womenToggleButton.isChecked = false
             coEdToggleButton.isChecked = false
-            selectedLeague = "Mens"
+            player.selectedLeague = "Mens"
         }
 
         womenToggleButton.setOnClickListener {
             menToggleButton.isChecked = false
             coEdToggleButton.isChecked = false
-            selectedLeague = "Womens"
+            player.selectedLeague = "Womens"
         }
 
         coEdToggleButton.setOnClickListener {
             menToggleButton.isChecked = false
             womenToggleButton.isChecked = false
-            selectedLeague = "Co-ed"
+            player.selectedLeague = "Co-ed"
         }
 
     }
