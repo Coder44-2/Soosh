@@ -8,11 +8,15 @@ import com.example.soosh.utlities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_finished.*
 
 class FinishedActivity : BaseActivity() {
+
+    lateinit var player: Player
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finished)
 
-        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+        player = intent.getParcelableExtra(EXTRA_PLAYER)
         searchTxt.text = "Looking for a ${player.selectedLeague?.toLowerCase()} ${player.category?.toLowerCase()} league near you."
+
     }
 }

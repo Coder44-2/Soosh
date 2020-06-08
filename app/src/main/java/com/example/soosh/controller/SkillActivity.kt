@@ -2,6 +2,7 @@ package com.example.soosh.controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.widget.Toast
 import com.example.soosh.Model.Player
 import com.example.soosh.R
@@ -10,15 +11,21 @@ import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
 
+    lateinit var player: Player
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, player)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
 
-        val player = intent.getParcelableExtra<Player>(EXTRA_PLAYER)
+         player = intent.getParcelableExtra(EXTRA_PLAYER)
 
         finishBtn.setOnClickListener {
-            if (player?.category != "") {
+            if (player.category != "") {
                 val finished = Intent(this, FinishedActivity::class.java)
                 finished.putExtra(EXTRA_PLAYER, player)
                 startActivity(finished)
@@ -31,13 +38,21 @@ class SkillActivity : BaseActivity() {
 
         beginnerButton.setOnClickListener {
             ballerButton.isChecked = false
-            player?.category = "Beginner"
+            player.category = "Beginner"
         }
 
         ballerButton.setOnClickListener {
             beginnerButton.isChecked = false
-            player?.category = "Baller"
+            player.category = "Baller"
         }
 
     }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        if (savedInstanceState != null){
+            player = savedInstanceState.getParcelable<Player>(EXTRA_PLAYER)!!
+        }
+    }
+
 }
